@@ -1,0 +1,79 @@
+@use "./colors";
+@use "./typography";
+@use "./variables";
+
+// Sayfa genel stilleri
+body {
+  background-color: colors.$slate-300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+// Card Styles
+.card {
+  width: 280px;
+  background-color: colors.$white;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1rem;
+
+  @media (max-width: variables.$mobile-width) {
+    width: 100%;
+    max-width: 80%;
+    padding: 0.8rem;
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img {
+      width: 100%;
+      border-radius: 12px;
+
+      @media (max-width: variables.$mobile-width) {
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: variables.$mobile-width) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .footer {
+    padding: 0 0.8rem;
+    text-align: center;
+
+    .footer-title {
+      font-size: 1.4rem;
+      font-weight: typography.$font-weight-bold;
+      color: colors.$slate-900;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: variables.$mobile-width) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .footer-text {
+      font-size: typography.$font-size-body;
+      font-weight: typography.$font-weight-regular;
+      color: colors.$slate-500;
+      line-height: 1.4;
+
+      @media (max-width: variables.$mobile-width) {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: variables.$mobile-width) {
+      padding: 0 0.5rem;
+    }
+  }
+}
