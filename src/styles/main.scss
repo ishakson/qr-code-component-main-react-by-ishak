@@ -1,79 +1,55 @@
 @use "./colors";
 @use "./typography";
-@use "./variables";
 
-// Sayfa genel stilleri
 body {
   background-color: colors.$slate-300;
+  font-size: typography.$font-size;
+  font-family: typography.$font-family;
+  font-weight: typography.$font-weight-regular;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
-
-// Card Styles
-.card {
-  width: 280px;
-  background-color: colors.$white;
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
   padding: 1rem;
 
-  @media (max-width: variables.$mobile-width) {
-    width: 100%;
-    max-width: 80%;
-    padding: 0.8rem;
+  .creater {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
   }
 
-  .img-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .card {
+    background-color: colors.$white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    max-width: 17rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
 
-    .img {
+    img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 0.625rem;
+      max-height: 18rem;
+      max-width: 18rem;
+    }
 
-      @media (max-width: variables.$mobile-width) {
-        border-radius: 10px;
+    .footer {
+      text-align: center;
+
+      &-text {
+        font-size: 0.94rem;
+        font-weight: typography.$font-weight-regular;
+        color: colors.$slate-500;
       }
-    }
 
-    @media (max-width: variables.$mobile-width) {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .footer {
-    padding: 0 0.8rem;
-    text-align: center;
-
-    .footer-title {
-      font-size: 1.4rem;
-      font-weight: typography.$font-weight-bold;
-      color: colors.$slate-900;
-      margin-bottom: 0.5rem;
-
-      @media (max-width: variables.$mobile-width) {
-        font-size: 1.2rem;
+      &-title {
+        font-size: 1.375rem;
+        font-weight: typography.$font-weight-bold;
+        color: colors.$slate-900;
+        width: 100%;
       }
-    }
-
-    .footer-text {
-      font-size: typography.$font-size-body;
-      font-weight: typography.$font-weight-regular;
-      color: colors.$slate-500;
-      line-height: 1.4;
-
-      @media (max-width: variables.$mobile-width) {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: variables.$mobile-width) {
-      padding: 0 0.5rem;
     }
   }
 }
